@@ -1,0 +1,70 @@
+@import url("./animations.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+}
+html,
+body {
+  overflow: auto !important;
+}
+.v-bottom-navigation {
+  --v-layout-bottom: 56px;
+  position: absolute !important;
+  bottom: 2px !important;
+}
+html body .v-main {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--v-layout-bottom) + 2px);
+  overflow: hidden;
+}
+
+.over-transition {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.in-transition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex: 0 0 0;
+}
+.scrollable-container {
+  /* background: rgb(var(--v-theme-background)) repeat; */
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+}
+.scrollable-container--active {
+  padding-bottom: var(--v-layout-bottom);
+  padding-bottom: calc(var(--v-layout-bottom) + 12px);
+}
+.fixed-on-page-bottom {
+  position: absolute;
+  left: 0;
+  /* right: 0; */
+  width: 100vw;
+  bottom: 0;
+}
+
+.v-overlay__scrim {
+  background: rgb(var(--v-theme-surface)) !important;
+}
+
+body .text-default {
+  color: rgb(var(--v-theme-on-default)) !important;
+}

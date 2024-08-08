@@ -1,0 +1,133 @@
+@keyframes fade {
+  0% {
+    /* transform: scale(0.5); */
+    opacity: 0;
+  }
+  100% {
+    /* transform: none; */
+    opacity: 1;
+  }
+}
+@keyframes unblur {
+  0% {
+    /* transform: scale(0.5); */
+    filter: blur(5px);
+  }
+  100% {
+    /* transform: none; */
+    filter: blur(0);
+  }
+}
+.animation-appear {
+  /* transform: scale(0); */
+  opacity: 0;
+  animation: fade 0.2s forwards ease-out;
+}
+.animation-unblur {
+  /* transform: scale(0); */
+  filter: blur(5px);
+  animation: unblur 0.2s 0.2s forwards ease-out;
+}
+
+.scale-fade-enter-active {
+  transition: all 0.15s 0.15s ease;
+}
+.scale-fade-leave-active {
+  transition: all 0.15s ease;
+}
+
+.scale-fade-enter-from {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+.scale-fade-enter-to {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.scale-fade-leave-from {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.scale-fade-leave-to {
+  transform: scale(1.05);
+  opacity: 0;
+}
+
+.slide-forward-enter-active,
+.slide-forward-leave-active {
+  transition: all 0.3s ease;
+}
+.slide-forward-leave-from {
+  transform: translatex(0);
+}
+.slide-forward-leave-to {
+  transform: translatex(-50%);
+}
+.slide-forward-enter-from {
+  transform: translatex(100%);
+}
+.slide-forward-enter-to {
+  transform: translatex(0);
+}
+
+/*backword*/
+.slide-backword-enter-active,
+.slide-backword-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-backword-leave-from {
+  transform: translatex(0);
+}
+.slide-backword-leave-to {
+  transform: translatex(50%);
+}
+.slide-backword-enter-from {
+  transform: translatex(-100%);
+}
+.slide-backword-enter-to {
+  transform: translatex(0);
+}
+/*slide-right*/
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: all 0.3s ease;
+}
+.slide-right-leave-from {
+  transform: translatex(0);
+}
+.slide-right-leave-to {
+  transform: translatex(100%) scale(0.8);
+}
+.slide-right-enter-from {
+  transform: translatex(100%) scale(0.8);
+}
+.slide-right-enter-to {
+  transform: translatex(0);
+}
+
+.animation-shrink {
+  overflow: hidden;
+}
+
+.shrink-enter-active {
+  transition: opacity 0.3s, height 0.3s;
+  animation: none;
+}
+.shrink-leave-active {
+  transition: opacity 0.3s, height 0.3s 0.3s;
+  animation: none;
+}
+.shrink-leave-from {
+  opacity: 1;
+}
+.shrink-enter-from,
+.shrink-leave-to {
+  height: 0 !important;
+  opacity: 0 !important;
+  padding: 0; /* Optional: убрать внутренние отступы для плавного схлопывания */
+  margin: 0; /* Optional: убрать внешние отступы для плавного схлопывания */
+}
