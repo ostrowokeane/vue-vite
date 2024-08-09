@@ -1,4 +1,4 @@
-import Icon from "./Icon.vue";
+import Icon from "./icon.vue";
 
 import { names } from "./icon.constants";
 

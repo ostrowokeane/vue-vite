@@ -1,8 +1,21 @@
-<template></template>
+<template>
+  <v-layout>
+    <v-main>
+      <div class="over-transition">
+        <router-view v-slot="{ Component, route }">
+          <transition-group :name="transitionName">
+            <div :key="route.path" class="in-transition">
+              <component :key="route.path" :is="Component" />
+            </div>
+          </transition-group>
+        </router-view>
+      </div>
+    </v-main>
+  </v-layout>
+</template>
 
 <script setup lang="ts">
 import { router, isManual } from "@/app/router/router";
-import WbsBottomNav from "@/entities/WbsBottomNav.vue";
 import { isIOS } from "@vueuse/core";
 import { watch } from "vue";
 import { ref } from "vue";
