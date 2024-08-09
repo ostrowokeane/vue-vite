@@ -1,6 +1,5 @@
 import "@formkit/themes/genesis";
 import "@mdi/font/css/materialdesignicons.css";
-import "@/shared/fonts/Pragmatica/stylesheet.css";
 import "@/app/styles/main.css";
 
 import { createApp } from "vue";
@@ -12,7 +11,6 @@ import "vuetify/styles";
 import { createVuetify, type ThemeDefinition } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
-import { aliases, mdi } from "vuetify/iconsets/mdi";
 
 const light: ThemeDefinition = {
   dark: false,
@@ -37,15 +35,8 @@ const dark: ThemeDefinition = {
 };
 
 const vuetify = createVuetify({
-  components,
+  // components,
   directives,
-  icons: {
-    defaultSet: "mdi",
-    aliases,
-    sets: {
-      mdi,
-    },
-  },
   theme: {
     defaultTheme: "dark",
     themes: {

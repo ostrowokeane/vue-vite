@@ -2,13 +2,15 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import VueRouter from "unplugin-vue-router/vite";
 import * as fs from "fs";
+import svgLoader from "vite-svg-loader";
+import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [VueRouter(), vue()],
+  plugins: [VueRouter(), vue() /* svgLoader() */],
   resolve: {
     alias: {
-      "@": "/src",
+      "@": resolve(__dirname, "./src"),
     },
   },
   // server: {

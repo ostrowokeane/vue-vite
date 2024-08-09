@@ -1,36 +1,13 @@
-<template>
-  <v-layout>
-    <v-main>
-      <div class="over-transition">
-        <router-view v-slot="{ Component, route }">
-          <transition-group :name="transitionName">
-            <div :key="route.path" class="in-transition">
-              <component :key="route.path" :is="Component" />
-            </div>
-          </transition-group>
-        </router-view>
-      </div>
-    </v-main>
-
-    <v-bottom-navigation color="default">
-      <v-btn color="default">
-        <v-icon>mdi-glass-cocktail</v-icon>
-        Меню
-      </v-btn>
-
-      <v-btn color="default">
-        <v-icon>mdi-list-status</v-icon>
-        Заказы
-      </v-btn>
-    </v-bottom-navigation>
-  </v-layout>
-</template>
+<template></template>
 
 <script setup lang="ts">
 import { router, isManual } from "@/app/router/router";
+import WbsBottomNav from "@/entities/WbsBottomNav.vue";
 import { isIOS } from "@vueuse/core";
 import { watch } from "vue";
 import { ref } from "vue";
+import { VLayout } from "vuetify/components/VLayout";
+import { VMain } from "vuetify/components/VMain";
 
 /**
  * Помимо fetch еще и удаляет из заказа элементы, которые возможно закончились
@@ -47,8 +24,8 @@ const getTransitionName = (to: any, from: any) => {
   return toDepth === fromDepth
     ? "scale-fade"
     : toDepth > fromDepth
-    ? "slide-forward"
-    : "slide-backword";
+      ? "slide-forward"
+      : "slide-backword";
 };
 
 watch(
