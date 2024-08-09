@@ -1,5 +1,3 @@
-import "@formkit/themes/genesis";
-import "@mdi/font/css/materialdesignicons.css";
 import "@/app/styles/main.css";
 
 import { createApp } from "vue";
@@ -9,7 +7,6 @@ import { vMaska } from "maska";
 
 import "vuetify/styles";
 import { createVuetify, type ThemeDefinition } from "vuetify";
-import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 
 const light: ThemeDefinition = {
